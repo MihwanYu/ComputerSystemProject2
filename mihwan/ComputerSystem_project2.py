@@ -62,7 +62,8 @@ class cacheblock:
 class cachelevel:
     def __init__(self, sets, low_level=None, E=1):
         self.sets = sets
-        self.blocks = self.make_blocks()
+        # self.blocks = self.make_blocks()
+        self.blocks = []
         self.E = E
         self.low_level = low_level
     
