@@ -9,7 +9,7 @@ import time
 #lyrics: on the ground + thank you next + rain on me
 
 #%% data load and preprocessing
-with open('/lyrics.txt', 'r', encoding = "utf-8") as f:
+with open('lyrics.txt', 'r', encoding = "utf-8") as f:
     lyrics= f.read()
 #전처리: 특수문자 제거, 알파벳 소문자 변환, 어절 분리
 new_lyric = lyrics.replace('\n',' ')
@@ -17,7 +17,7 @@ new_lyric = re.sub(r"[^a-zA-Z ]","",new_lyric).lower().split()
 
 
 #i, me 같이 무의미하게 반복되는 친구들(stopwords)
-with open('/stopwords_english.txt', 'r', encoding = "utf-8") as f:
+with open('stopwords_english.txt', 'r', encoding = "utf-8") as f:
     stopwords= f.read().split()
 
 #stopwords 제거
@@ -195,7 +195,7 @@ for level in [level1, level2, level3, level4]:
     level.hit=0
     level.miss=0
 
-with open('/cmp_lyrics.txt', 'r', encoding = "utf-8") as f:
+with open('cmp_lyrics.txt', 'r', encoding = "utf-8") as f:
     lyrics2= f.read()
 #전처리: 특수문자 제거, 알파벳 소문자 변환, 어절 분리
 new_lyric2 = lyrics2.replace('\n',' ')
