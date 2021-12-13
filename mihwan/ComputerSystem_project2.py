@@ -109,7 +109,7 @@ class cachelevel:
         # 아주 처음, 블록이 없을 경우, 최하위 메모리에 블록 생성과 동시에 word를 블록에 추가하고 함수 종료
         if len(self.blocks) == 0:
             tag = self.makeblock_withword(word)
-            return tag  # 첫번째 cache blcok의 태그 값은 1
+            return tag  # 첫번째 cache block의 태그 값은 1
 
         # 기존에 존재하던 블록 중 가장 마지막 블록 b에 공간이 남아있다면 그 블록에 단어 쌍을 추가함
         b = self.blocks[-1]
@@ -198,7 +198,7 @@ new_lyric2 = lyrics2.replace('\n', ' ')
 new_lyric2 = re.sub(r"[^a-zA-Z ]", "", new_lyric2).lower().split()
 
 # stopwords 제거
-new_lyric = [word for word in new_lyric2 if word not in stopwords]
+new_lyric2 = [word for word in new_lyric2 if word not in stopwords]
 print(new_lyric2)
 
 # %%
@@ -215,3 +215,6 @@ print('\n\n____________________________________')
 for level in [level1, level2, level3, level4]:
     hitRatio = level.hit_miss_ratio() * 100
     print('%s의 hit ratio는 %.2f%%' % (level.cachename, hitRatio))
+    print(level.hit)
+    print(level.miss)
+
